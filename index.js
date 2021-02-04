@@ -27,28 +27,10 @@ class School
         {
             console.log('Invalid input: numberOfStudents must be set to a Number')
         }
-        // return this._numOfStudents
     }
     set numOfStudents(num)
     {
-        // console.log('inside set')
-        // if(typeof num === 'number' && num >= 0) 
-        // {
-        //     console.log('inside if')
             this._numOfStudents = num
-        // }
-        // else
-        // {
-        //     console.log('Invalid input: numberOfStudents must be set to a Number.')
-        // }
-        // if(num.isNaN())
-        // {
-        //     console.log('Invalid input: numberOfStudents must be set to a Number.') 
-        // }
-        // else
-        // {
-        //     this._numOfStudents = num
-        // }
     }
     quickFacts()
     {
