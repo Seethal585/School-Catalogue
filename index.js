@@ -17,27 +17,38 @@ class School
     }
     get numOfStudents()
     {
-        return this._numOfStudents
+        console.log('inside get')
+        if(typeof this._numOfStudents === 'number')
+        {
+            console.log('Inside if')
+            return this._numOfStudents
+        }
+        else
+        {
+            console.log('Invalid input: numberOfStudents must be set to a Number')
+        }
+        // return this._numOfStudents
     }
     set numOfStudents(num)
     {
-        // if(typeof this.numOfStudents === 'number') 
+        // console.log('inside set')
+        // if(typeof num === 'number' && num >= 0) 
         // {
         //     console.log('inside if')
-        //     this._numOfStudents = num
+            this._numOfStudents = num
         // }
         // else
         // {
         //     console.log('Invalid input: numberOfStudents must be set to a Number.')
         // }
-        if(num.isNaN())
-        {
-            console.log('Invalid input: numberOfStudents must be set to a Number.') 
-        }
-        else
-        {
-            this._numOfStudents = num
-        }
+        // if(num.isNaN())
+        // {
+        //     console.log('Invalid input: numberOfStudents must be set to a Number.') 
+        // }
+        // else
+        // {
+        //     this._numOfStudents = num
+        // }
     }
     quickFacts()
     {
@@ -51,7 +62,7 @@ class School
 }
 class primarySchool extends School
 {
-    constructor(name, numOfStudents, pickupPolicy)
+    constructor(name,numOfStudents, pickupPolicy)
     {
         super(name,'primary',numOfStudents)
         this._pickupPolicy = pickupPolicy
@@ -73,8 +84,12 @@ class highSchool extends School
         return this._sportsTeams
     }
 }
-const lorraineHansbury = new primarySchool('Lorraine Hansbury', 'def', 'Students must be picked up by a parent, guardian, or a family member over the age of 13.')
+
+const lorraineHansbury = new primarySchool('Lorraine Hansbury', 345, 'Students must be picked up by a parent, guardian, or a family member over the age of 13.')
 lorraineHansbury.quickFacts()
+console.log(lorraineHansbury.pickupPolicy)
+console.log(lorraineHansbury.numOfStudents)
 console.log(School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']))
-const alSmith = new highSchool('Al E. Smith', 'drf', ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'])
+const alSmith = new highSchool('Al E. Smith', 'sed', ['Baseball', 'Basketball', 'Volleyball', 'Track and Field'])
 console.log(alSmith.SportsTeams)
+alSmith.quickFacts()
